@@ -8,6 +8,11 @@ openai.api_key = os.environ.get("TOKEN_GPT")
 bot = telebot.TeleBot(os.environ.get("TOKEN_TELEGRAM"))
 
 
+@bot.message_handler(commands=['start'])
+def start_message(message):
+  bot.send_message(message.chat.id, "Привет ✌, тут ты можешь всегда узнать ответы на все интересующие тебе вопросы")
+
+
 @bot.message_handler(content_types=['text'])
 def handle_text(message):
     user_input = message.text

@@ -1,8 +1,9 @@
+import os
 import openai
 import telebot
 
-openai.api_key = "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"
-bot = telebot.TeleBot("5807785335:AAFzsYSX0YGiXjVEsNLs6CadazJBdE0t8YQ")
+openai.api_key = os.environ.get("TOKEN_GPT")
+bot = telebot.TeleBot(os.environ.get("TOKEN_TELEGRAM"))
 
 
 @bot.message_handler(content_types=['text'])

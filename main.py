@@ -1,6 +1,7 @@
 import os
 import openai
 import telebot
+from dotenv import load_dotenv
 
 openai.api_key = os.environ.get("TOKEN_GPT")
 bot = telebot.TeleBot(os.environ.get("TOKEN_TELEGRAM"))
